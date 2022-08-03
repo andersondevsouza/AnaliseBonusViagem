@@ -3,15 +3,15 @@ from twilio.rest import Client
 
 def enviar_sms(vendedor, vendas, mensagem):
     # Your Account SID from twilio.com/console
-    account_sid = "ACeb419a9684b41bafe213c3d3094e0161"
+    account_sid = "Your Account SID"
     # Your Auth Token from twilio.com/console
-    auth_token = "205ba8ed12b19659cb6e46d6a1998736"
+    auth_token = "Your Account Token"
 
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-        to="+5516992875188",
-        from_="+16894076022",
+        to="+5516XXXXXXXXX", # celular de destino do sms
+        from_="+16XXXXXXXXX", # numero gerado pelo twilio
         body=mensagem)
     print(message.sid)
 
